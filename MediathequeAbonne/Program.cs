@@ -12,6 +12,8 @@ namespace MediathequeAbonne
         {
             Adresse a = new Adresse("10 rue de la gare", "3800", "Grenoble");
             Console.WriteLine(a.Affiche());
+            Abonne ab1 = new Abonne("Snow", "John", 30, a);
+            Console.WriteLine(ab1.Affiche());
         }
     }
 }
