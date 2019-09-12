@@ -42,24 +42,26 @@ namespace MediathequeAbonne
 
                     int age;
                     if (!int.TryParse(elems[2], out age)) continue;
-                    try
-                    {
-                        Abonne abonne = new Abonne(elems[0], elems[1], age, adresse);
-                        lecteurs.Ajout(abonne);
-                    }
-                    catch (AbonneException e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    Abonne abonne = new Abonne(elems[0], elems[1], age, adresse);
+                    lecteurs.Ajout(abonne);
                 }
-                catch (AdresseException e)
+                catch (AbonneException e)
                 {
                     Console.WriteLine(e.Message);
                 }
+                catch (AdresseException e)
+            {
+                Console.WriteLine(e.Message);
             }
-            afficheLecteurs();
-        }
-
+                catch (Exception e)
+                {
+                    Console.WriteLine("Problème imprévu : " + e.Message);
+                    break;
+                }
+            }
+        afficheLecteurs();
     }
+
+}
 }
 
