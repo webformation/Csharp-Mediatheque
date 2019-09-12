@@ -57,5 +57,15 @@ namespace MediathequeAbonne
                    age == abonne.age &&
                    adresse == abonne.adresse;
         }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 210653919;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(nom);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(prenom);
+            hashCode = hashCode * -1521134295 + age.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Adresse>.Default.GetHashCode(adresse);
+            return hashCode;
+        }
     }
 }

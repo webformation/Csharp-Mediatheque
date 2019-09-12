@@ -69,6 +69,15 @@ namespace MediathequeAbonne
                    ville == adresse.ville;
         }
 
+        public override int GetHashCode()
+        {
+            var hashCode = 758992713;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(voie);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(cp);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ville);
+            return hashCode;
+        }
+
         public static bool operator ==(Adresse adresse1, Adresse adresse2)
         {
             return EqualityComparer<Adresse>.Default.Equals(adresse1, adresse2);
@@ -78,5 +87,7 @@ namespace MediathequeAbonne
         {
             return !(adresse1 == adresse2);
         }
+
     }
+
 }
