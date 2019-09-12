@@ -54,6 +54,10 @@ namespace MediathequeAbonne
             this.adresse = adresse;
             this.numero=Compteur++;
         }
+        //static  Abonne()
+        //{
+        //    Console.WriteLine("Constructeur statique !");
+        //}
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(prenom);
