@@ -68,5 +68,15 @@ namespace MediathequeAbonne
                    cp == adresse.cp &&
                    ville == adresse.ville;
         }
+
+        public static bool operator ==(Adresse adresse1, Adresse adresse2)
+        {
+            return EqualityComparer<Adresse>.Default.Equals(adresse1, adresse2);
+        }
+
+        public static bool operator !=(Adresse adresse1, Adresse adresse2)
+        {
+            return !(adresse1 == adresse2);
+        }
     }
 }

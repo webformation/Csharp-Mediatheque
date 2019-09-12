@@ -55,7 +55,7 @@ namespace MediathequeAbonne
                    nom == abonne.nom &&
                    prenom == abonne.prenom &&
                    age == abonne.age &&
-                   EqualityComparer<Adresse>.Default.Equals(adresse, abonne.adresse);
+                   adresse == abonne.adresse;
         }
     }
 }
