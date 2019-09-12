@@ -11,9 +11,9 @@ namespace MediathequeAbonne
         static void Main(string[] args)
         {
             Adresse a = new Adresse("10 rue de la gare", "3800", "Grenoble");
-            Console.WriteLine(a.Affiche());
+            Console.WriteLine(a);
             Abonne ab1 = new Abonne("Snow", "John", 30, a);
-            Console.WriteLine(ab1.Affiche());
+            Console.WriteLine(ab1);
             Abonnes lecteurs = new Abonnes();
             lecteurs.Ajout(ab1);
             void afficheLecteurs()
@@ -21,7 +21,7 @@ namespace MediathequeAbonne
                 Console.WriteLine("Liste des abonnés");
                 foreach (var x in lecteurs.liste)
                 {
-                    Console.WriteLine(x.Affiche());
+                    Console.WriteLine(x);
                 }
             }
             afficheLecteurs();

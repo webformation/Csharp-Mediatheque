@@ -36,7 +36,7 @@ namespace MediathequeAbonne
             this.age = age;
             this.adresse = adresse;
         }
-        public string Affiche()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder(prenom);
             sb.Append(" ");
@@ -44,8 +44,18 @@ namespace MediathequeAbonne
             sb.Append(", age ");
             sb.Append(age);
             sb.Append(" ans, ");
-            sb.Append(adresse.Affiche());
+            sb.Append(adresse);
             return sb.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var abonne = obj as Abonne;
+            return abonne != null &&
+                   nom == abonne.nom &&
+                   prenom == abonne.prenom &&
+                   age == abonne.age &&
+                   EqualityComparer<Adresse>.Default.Equals(adresse, abonne.adresse);
         }
     }
 }

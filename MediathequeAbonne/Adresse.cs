@@ -50,7 +50,7 @@ namespace MediathequeAbonne
             this.cp = cp;
             this.ville = ville;
         }
-        public string Affiche()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder(voie);
             sb.Append(", ");
@@ -58,6 +58,15 @@ namespace MediathequeAbonne
             sb.Append(" ");
             sb.Append(ville);
             return sb.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var adresse = obj as Adresse;
+            return adresse != null &&
+                   voie == adresse.voie &&
+                   cp == adresse.cp &&
+                   ville == adresse.ville;
         }
     }
 }

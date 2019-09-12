@@ -19,7 +19,10 @@ namespace MediathequeAbonne
         }
         public void Ajout(Abonne a)
         {
-            liste.Add(a);
+            if (!liste.Contains(a))
+            {
+                liste.Add(a);
+            }
         }
 
     }
