@@ -16,10 +16,32 @@ namespace MediathequeAbonne
             Console.WriteLine(ab1.Affiche());
             Abonnes lecteurs = new Abonnes();
             lecteurs.Ajout(ab1);
-            foreach (var x in lecteurs.liste)
+            void afficheLecteurs()
             {
-                Console.WriteLine(x.Affiche());
+                Console.WriteLine("Liste des abonnés");
+                foreach (var x in lecteurs.liste)
+                {
+                    Console.WriteLine(x.Affiche());
+                }
             }
+            afficheLecteurs();
+           
+
+            string saisie;
+            Console.WriteLine("Saisissez un abonne (nom;prenom;age;rue;cp;ville). Q pour quitter");
+            while (true)
+            {
+                saisie = Console.ReadLine();
+                if (saisie.ToLower() == "q") break;
+                char[] separ = { ';' };
+                string[] elems = saisie.Split(separ);
+                Adresse adresse = new Adresse(elems[3], elems[4], elems[5]);
+                int age;
+                int.TryParse(elems[2], out age);
+                Abonne abonne = new Abonne(elems[0], elems[1], age, adresse);
+                lecteurs.Ajout(abonne);
+            }
+            afficheLecteurs();
         }
     }
 }
