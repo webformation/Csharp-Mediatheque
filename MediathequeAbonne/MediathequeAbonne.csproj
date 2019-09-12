@@ -46,6 +46,7 @@
     <Compile Include="Abonne.cs" />
     <Compile Include="Abonnes.cs" />
     <Compile Include="Adresse.cs" />
+    <Compile Include="MediaException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

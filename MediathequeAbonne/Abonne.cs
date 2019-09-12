@@ -20,7 +20,7 @@ namespace MediathequeAbonne
                 }
                 else
                 {
-                    throw new Exception("nom incorrect");
+                    throw new AbonneException("nom incorrect");
                 }
             }
         }
@@ -30,12 +30,19 @@ namespace MediathequeAbonne
         public Adresse adresse
         {
             get { return _adresse; }
-            set { if (value != null) _adresse = value; }
+            set
+            {
+                if (value != null) { _adresse = value; }
+                else
+                {
+                    throw new AbonneException("adresse non définie");
+                }
+            }
         }
 
         public Abonne(string nom, string prenom, int age, Adresse adresse)
         {
-           this.nom = nom;
+            this.nom = nom;
             this.prenom = prenom;
             this.age = age;
             this.adresse = adresse;

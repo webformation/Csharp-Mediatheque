@@ -21,7 +21,7 @@ namespace MediathequeAbonne
                 }
                 else
                 {
-                    throw new Exception("code postal incorrect");
+                    throw new AdresseException("code postal incorrect");
                 }
             }
         }
@@ -35,9 +35,7 @@ namespace MediathequeAbonne
                 }
                 else
                 {
-                    /**
-                     *  a traiter
-                     */
+                    throw new AdresseException("ville incorrecte");
                 }
             }
         }
