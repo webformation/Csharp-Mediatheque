@@ -14,6 +14,7 @@ namespace MediathequeAbonne
             set { if (value > _compteur) _compteur = value; }
         }
         private int numero;
+        public Civilite civilite;
         private string _nom;
         public string nom
         {
@@ -46,8 +47,20 @@ namespace MediathequeAbonne
             }
         }
 
-        public Abonne(string nom, string prenom, int age, Adresse adresse)
+        public Abonne(string c, string nom, string prenom, int age, Adresse adresse)
         {
+            switch (c)
+            {
+                case "Mme":
+                    civilite = Civilite.Madame;
+                    break;
+                case "M":
+                    civilite = Civilite.Monsieur;
+                    break;
+                default:
+                    throw new AbonneException("Civilité inconne");
+                    break;
+            }
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
@@ -60,7 +73,9 @@ namespace MediathequeAbonne
         //}
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder(prenom);
+            StringBuilder sb = new StringBuilder(civilite.ToString());
+            sb.Append(" ");
+            sb.Append(prenom);
             sb.Append(" ");
             sb.Append(_nom);
             sb.Append(", age ");
@@ -92,4 +107,6 @@ namespace MediathequeAbonne
             return hashCode;
         }
     }
+
+    enum Civilite { Madame, Monsieur}
 }
