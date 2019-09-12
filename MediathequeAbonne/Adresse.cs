@@ -21,9 +21,7 @@ namespace MediathequeAbonne
                 }
                 else
                 {
-                    /**
-                     *  a traiter
-                     */
+                    throw new Exception("code postal incorrect");
                 }
             }
         }

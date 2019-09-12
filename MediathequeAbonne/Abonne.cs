@@ -18,6 +18,10 @@ namespace MediathequeAbonne
                 {
                     _nom = value;
                 }
+                else
+                {
+                    throw new Exception("nom incorrect");
+                }
             }
         }
         public string prenom { get; set; }
