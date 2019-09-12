@@ -8,6 +8,12 @@ namespace MediathequeAbonne
 {
     class Abonne
     {
+        static private int _compteur = 0;
+        static public int Compteur {
+            get { return _compteur; }
+            set { if (value > _compteur) _compteur = value; }
+        }
+        private int numero;
         private string _nom;
         public string nom
         {
@@ -46,6 +52,7 @@ namespace MediathequeAbonne
             this.prenom = prenom;
             this.age = age;
             this.adresse = adresse;
+            this.numero=Compteur++;
         }
         public override string ToString()
         {
@@ -56,6 +63,8 @@ namespace MediathequeAbonne
             sb.Append(age);
             sb.Append(" ans, ");
             sb.Append(adresse);
+            sb.Append(", identifiant : ");
+            sb.Append(numero);
             return sb.ToString();
         }
 

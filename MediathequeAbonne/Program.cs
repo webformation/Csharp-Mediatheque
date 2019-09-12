@@ -29,6 +29,7 @@ namespace MediathequeAbonne
 
 
             string saisie;
+            Abonne.Compteur = 10;
             Console.WriteLine("Saisissez un abonne (nom;prenom;age;rue;cp;ville). Q pour quitter");
             while (true)
             {
