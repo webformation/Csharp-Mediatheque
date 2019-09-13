@@ -1,0 +1,3 @@
+Mme;Dupond;Marie;20;5 rue de l'église;38240;Meylan
+M;Durand;Pierre;35;25 rue du marché;38400;La Tronche
+Mme;Dupond;Marie;20;5 rue de l'église;38000;Grenoble
