@@ -63,8 +63,10 @@ namespace MediathequeAbonne
                 }
             }
             afficheLecteurs();
+            lecteurs.enregistre("listeAbonne.txt");
         }
         enum position { ville = 4, rue = 3 }
+
 
     }
 }
