@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediathequeAbonne
 {
-    class Abonnes
+    public class Abonnes
     {
         private List<Abonne> _liste;
         public List<Abonne> liste

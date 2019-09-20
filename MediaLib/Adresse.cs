@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediathequeAbonne
 {
-    class Adresse
+    public class Adresse
     {
         private string _cp;
         private string _ville;

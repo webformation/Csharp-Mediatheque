@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediathequeAbonne
 {
-    class Abonne
+    public class Abonne
     {
         static private int _compteur = 0;
         static public int Compteur {
@@ -108,5 +108,5 @@ namespace MediathequeAbonne
         }
     }
 
-    enum Civilite { Madame, Monsieur}
+    public enum Civilite { Madame, Monsieur}
 }

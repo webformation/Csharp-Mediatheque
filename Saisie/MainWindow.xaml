@@ -1,0 +1,44 @@
+﻿<Window x:Class="Saisie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saisie"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="center" Text="Saisie d'un abonné" FontSize="30" Background="LightBlue"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="6" Content="Valider" Grid.ColumnSpan="2" HorizontalAlignment="center" VerticalAlignment="center" Padding="10" Click="Button_Click"></Button>
+            <TextBlock Grid.Row="0" Text="Nom" FontSize="20" HorizontalAlignment="center" ></TextBlock>
+            <TextBlock Grid.Row="1" Text="Prénom" FontSize="20" HorizontalAlignment="center"></TextBlock>
+            <TextBlock Grid.Row="2" Text="Age" FontSize="20" HorizontalAlignment="center" ></TextBlock>
+            <TextBlock Grid.Row="3" Text="Rue" FontSize="20" HorizontalAlignment="center" ></TextBlock>
+            <TextBlock Grid.Row="4" Text="CP" FontSize="20" HorizontalAlignment="center" ></TextBlock>
+            <TextBlock Grid.Row="5" Text="Ville" FontSize="20" HorizontalAlignment="center" ></TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="nom" ToolTip="Nom de l'abonné (obligatoire)" HorizontalAlignment="Stretch" FontSize="20"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="prenom" ToolTip="Prénom de l'abonné" HorizontalAlignment="Stretch" FontSize="20"></TextBox>
+             <TextBox Grid.Row="2" Grid.Column="1" Name="age" ToolTip="Age de l'abonné" HorizontalAlignment="Stretch" FontSize="20"></TextBox> 
+            <TextBox Grid.Row="3" Grid.Column="1" Name="rue" ToolTip="adresse" HorizontalAlignment="Stretch" FontSize="20"></TextBox> 
+            <TextBox Grid.Row="4" Grid.Column="1" Name="cp" ToolTip="cp" HorizontalAlignment="Stretch" FontSize="20"></TextBox> 
+            <TextBox Grid.Row="5" Grid.Column="1" Name="ville" ToolTip="ville" HorizontalAlignment="Stretch" FontSize="20"></TextBox>
+        </Grid>
+    </Grid>
+</Window>
